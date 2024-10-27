@@ -1,23 +1,30 @@
-import { Client, IntentsBitField } from "discord.js";
-import getAppConfig from "./app-config";
+import { ActivityType, Client, GatewayIntentBits, IntentsBitField } from "discord.js";
+import getAppConfig from "./utils/app-config";
 import { exampleCommand } from "./command/example";
 import express from 'express'
+import { loadApiRoutes } from "./api";
+import { articleCommand } from "./command/article";
 
 
-export const client = new Client({ intents: [IntentsBitField.Flags.Guilds] });
-const appConfig = getAppConfig();
+export const client = new Client({ intents: [
+  GatewayIntentBits.Guilds,
+  IntentsBitField.Flags.Guilds, 
+  GatewayIntentBits.GuildMessages, 
+  GatewayIntentBits.MessageContent 
+]});
+
 
 function registerSlashCommands(){
-    exampleCommand();
+  exampleCommand();
+  articleCommand();
 }
-const app = express()
 
-app.get('/', (req, res) => {
-  res.json({ message: "Hello, scrapofcode!" });
-})
+const appConfig = getAppConfig();
+const app = express();
 
-app.listen(3000)
+loadApiRoutes(app);
+
+app.listen(3000);
 
 registerSlashCommands();
-
 client.login(appConfig.discord.token);
