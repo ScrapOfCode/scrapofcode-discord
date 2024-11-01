@@ -14,10 +14,12 @@
   "dependencies": {
     "@prismicio/client": "^7.11.0",
     "@types/express": "^5.0.0",
+    "@vercel/postgres-kysely": "^0.10.0",
     "discord.js": "^14.16.3",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "ky": "^1.7.2"
+    "ky": "^1.7.2",
+    "kysely": "^0.27.4"
   },
   "devDependencies": {
     "tsup": "^8.3.5",

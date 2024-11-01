@@ -1,9 +1,9 @@
-import { EmbedBuilder, Message, TextChannel } from "discord.js";
-import { client } from "..";
-import { createCommand } from "../utils/discord/command";
+import { EmbedBuilder, Message } from "discord.js";
 import ky from "ky";
+import { Client } from "../utils/discord/client";
 
-export const articleCommand = () => createCommand(client, {
+
+export const handleArticleCommand = (client: Client) => client.command({
     data: {
         name: "articles",
         description: "Command that manages articles",

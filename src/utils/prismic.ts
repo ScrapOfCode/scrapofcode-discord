@@ -8,4 +8,4 @@ const getPrismicClient = () => {
     return client;
 };
 
-export default getPrismicClient
+export default getPrismicClient;

@@ -2,8 +2,9 @@ import { ChatInputCommandInteraction, Message } from "discord.js";
 import { createCommand } from "../utils/discord/command";
 import { client } from "..";
 import ky from 'ky';
+import Client from "../utils/discord/client";
 
-export const exampleCommand = () => createCommand(client, {
+export const handleExampleCommand = (client: Client) => client.command({
     data: {
         name: "example",
         description: "Example command",
@@ -64,4 +65,4 @@ export const exampleCommand = () => createCommand(client, {
     callback: async () => {
         console.log("hello");
     }
-});
+})

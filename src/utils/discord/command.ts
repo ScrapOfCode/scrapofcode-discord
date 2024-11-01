@@ -12,7 +12,7 @@ type SubCommandOptions =
   | { type: "mentionable", name: string, description?: string }
   | { type: "number", name: string, description?: string };
 
-type CommandOpts = {
+export type CommandOpts = {
     data: {
         name: string,
         description?: string,

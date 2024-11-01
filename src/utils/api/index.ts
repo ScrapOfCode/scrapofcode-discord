@@ -1,7 +1,7 @@
 import type { Request, Response, Express } from "express";
 
 type ApiRequestType = "get" | "post" | "put" | "delete" | "patch";
-type ApiRequest = {
+export type ApiRequest = {
     type: ApiRequestType,
     endpoint: string,
     callback: (
@@ -10,7 +10,7 @@ type ApiRequest = {
     ) => Promise<void>
 };
 
-export async function createExpressRoute(express: Express, opts: ApiRequest){
+export async function createExpressRoute(express: Express, opts: ApiRequest) {
 
     const { type, endpoint, callback } = opts;
 
