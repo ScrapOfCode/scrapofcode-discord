@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx watch src/public/index.ts",
     "start": "node dist/index.js",
     "build": "tsup src/index.ts --minify"
   },
@@ -12,14 +12,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@algolia/client-search": "^5.13.0",
     "@prismicio/client": "^7.11.0",
     "@types/express": "^5.0.0",
     "@vercel/postgres-kysely": "^0.10.0",
+    "context": "^3.0.32",
     "discord.js": "^14.16.3",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
+    "fs": "0.0.1-security",
+    "install": "^0.13.0",
     "ky": "^1.7.2",
-    "kysely": "^0.27.4"
+    "kysely": "^0.27.4",
+    "npm": "^10.9.0",
+    "winston": "^3.17.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "tsup": "^8.3.5",
